@@ -1,4 +1,5 @@
 ------------DATA CLEANING------------
+-- Data Source: https://www.kaggle.com/datasets/mikhail1681/walmart-sales 
 select * from walmart_sales ws ;
 
 -- Standardize data (format date to 'MM-DD-YYYY')
