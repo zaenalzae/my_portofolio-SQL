@@ -86,6 +86,20 @@ set "Memory" ='No Card'
 where "Memory" ='';
 drop table categories_smartphones ;
 
+--smartphones Profit Percentage
+alter table categories_smartphones 
+add column "Profit Percentage" decimal(4,2);
+
+update categories_smartphones 
+set "Profit Percentage" = case 
+	when "Categories" = 'Economic'then 0.1
+	when "Categories" = 'Affordable' then 0.15
+	when "Categories" = 'Mid-Range' then 0.25
+	when "Categories" = 'Premium' then 0.3
+	when "Categories" = 'Luxury' then 0.4
+end
+;
+
 -- Set Not Mensioned value to Storage where Storage = ''
 select distinct *
 from categories_smartphones cs 
